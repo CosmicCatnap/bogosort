@@ -10,7 +10,6 @@ unsigned int attempt;
 
 // GENERATE RANDOM LIST OF NUMBERS TO SORT
 void generate_list(int * a, int n) {
-  //printf("DEBUG: generate_list -> size=%d ", size);
   int i;
   for (i = 0; i < n; i++) {
     a[i] = rand() % 10;
@@ -27,7 +26,6 @@ void printList(int * a, int n) {
 
 // DETERMINE IF INTEGERS ARE SORTED
 bool is_sorted(int * a, int n) {
-  //printf("DEBUG: is_sorted -> n=%d ", n);
   int i = n;
   while (--n >= 1) {
     if (a[n] < a[n - 1]) {
@@ -46,7 +44,6 @@ bool is_sorted(int * a, int n) {
 
 // PREMIUM QUALITY BOGO HERE
 void shuffle(int * a, int n) {
-  //printf("DEBUG: shuffle -> n=%d ", n);
   int i, t, r;
   for (i = 0; i < n; i++) {
     t = a[i];
@@ -58,7 +55,6 @@ void shuffle(int * a, int n) {
 
 // A CONVENIENTLY TIDY ABSTRATION
 void bogo_sort(int * a, int n) {
-  //printf("DEBUG: bogo_sort -> n=%d ", n);
   while (!is_sorted(a, n)) shuffle(a, n);
 }
 
@@ -74,14 +70,11 @@ int main() {
   printf("Welcome to BOGOSORT in C! :) \n");
   printf("HOW MANY ITEMS DO YOU WANT TO SORT?\n");
   printf("ITEMS: ");
-  scanf("%d", & size);
+  scanf("%d", & n);
 
-  // printf("What is the max integer size \n");
-  // printf("MAX INT SIZE: ");
-  // scanf("%d", &range);
-
-  int numbers[size];
-  generate_list(numbers, size);
-  bogo_sort(numbers, size);
+  int a[n];
+  generate_list(a, n);
+  bogo_sort(a, n);
   printf("\n");
+  return 0;
 }

@@ -1,10 +1,8 @@
 #include <stdio.h>
-
 #include <stdlib.h>
-
 #include <stdbool.h>
-
 #include <time.h>
+
  // GLOBALS HERE
 unsigned int attempt;
 
@@ -29,7 +27,6 @@ bool is_sorted(int * a, int n) {
   int i = n;
   while (--n >= 1) {
     if (a[n] < a[n - 1]) {
-      //printf("DEBUG: if -> a[n]=$d < a[n-1]=%d", a[n], a[n-1]);
       ++attempt;
       printf("Attempt # %d: ", attempt);
       printList(a, i);
@@ -62,10 +59,9 @@ void bogo_sort(int * a, int n) {
 int main() {
   // SEED RAND HERE
   srand(time(0));
-  attempt = 0;
-  int i, size;
-
-  //range;
+  
+  attempt=0;
+  int n;
 
   printf("Welcome to BOGOSORT in C! :) \n");
   printf("HOW MANY ITEMS DO YOU WANT TO SORT?\n");
